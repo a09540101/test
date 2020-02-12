@@ -1,7 +1,7 @@
 
 # Chapter 3 Strings, Vectors, and Arrays
 ## 3.2 Library string Type
-本章節範例皆假設已有以下程式碼:
+>本章節範例皆假設已有以下程式碼:
 ``` c++
 #include <strung>
 using std::string
