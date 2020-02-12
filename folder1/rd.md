@@ -153,8 +153,8 @@ const int ci = 1024;
 const int &r1 = ci;   // ok: both reference and underlying object are const
 r1 = 42;              // error: r1 is a reference to const
 int &r2 = ci;         // error: non const reference to a const object
-```
-`Terminology : const Reference is a Reference to const `
+```  
+>**Terminology : const Reference is a Reference to const**  
 Reference並非一個物件，所以沒有是否為`const`的問題(因為它只能綁定一個對象，不能再改變，意義上來說一定是`const`)，因此當我們說const reference其實是在說reference to const(對常量做reference)。
 
 #### Initialization and References to `const`
