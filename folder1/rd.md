@@ -4,7 +4,7 @@
 當我們在定義變數的時候沒有提供initializer，則它會被default initialized，default value取決於該變數的型別以及被定義的地方，內建型別物件的值取決於他被定義的地方:
 
 (1)  如果定義於所有函式之外，則會被初始化為0。  
-(2)  如果定義於函數之內，則這些變數為**uninitialized**(例外:static變數，見6.1.1)，並且他們的值為未定義的(undefined)，複製或access這種變數是錯誤的。
+(2)  如果定義於函數之內，則這些變數為**uninitialized**(例外:static變數，見6.1.1)，並且他們的值為未定義的(undefined)，複製或access這種變數是錯誤的。  
 大部分的class可以默認初始化，例如如果我們不給string明確的initializer時，會獲得一個空字串，有些class不允許默認初始化，當我們沒在創建它的物件時提供initializer的話編譯器會complain。
 
 ### 2.2.2 Variable Declarations and Definitions
