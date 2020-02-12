@@ -30,7 +30,7 @@ extern double pi = 3.1416; // definition
 
 ## 2.3 Compound Types
 廣義上來說，一個宣告的結構為**base type**加上一串**declarator**，每個declarator都為一個變數命名並且給予該變數與base type相關的型別。  
-e.g.
+>**Example**
 ``` C++
 int &reval;
 ```
@@ -95,7 +95,7 @@ bufSize = 512;  //錯誤，試圖寫入該const物件
 const int bufSize = 512;
 ```
 編譯器通常會在編譯過程中把使用到該變量的地方替換成它對應的值。在此例中，編譯器會用`512`這個值來產生code代替`bufSize`的code，因此，編譯器必須能夠看見它的initializer才行，所以在一個被分割成多個檔案的程式中，每個檔案都必須都有對該`const`物件的定義，為了支持這個做法，同時避免對同一個變數的重複定義，默認情況下，`const`物件被設定成只在該檔案內有效，也就是說，若多個檔案中出現了同名的`const`變數，其實就像是在不同的檔案中分別定義了不同的變數一樣。  
-e.g.
+>**Example**
 ``` c++
 //在a.h中已經定一了一個const int變數i了
 //a.h的程式碼如下
@@ -124,7 +124,7 @@ extern const int bufSize = fcn();
 extern const int bufSize; // same bufSize as defined in file_1.cc
 ```
 在此例中，file_1.cc定義且初始化了`bufSize`，但`bufSize`是`const`，為了讓其他檔案能夠使用它，我們使用`extern`。在/file_1.h對`bufSize`的宣告仍用了`extern`，這表示(signify)` bufSize`並非該檔案特有的(not local to the file)而且其定義會在其他檔案中出現。  
-e.g.
+>**Example**
 ``` c++
 //a.h的程式碼如下
 #ifndef A_H
@@ -159,7 +159,7 @@ Reference並非一個物件，所以沒有是否為`const`的問題(因為它只
 
 #### Initialization and References to `const`
 我們可以把一個對`const`物件的reference(Reference to const)綁定到非`const`的物件、literal或是一般的expression(只要可以轉換成該reference的type即可(e.g. `coust &int` 可綁定到double expression)。  
-e.g.
+>**Example**
 ``` c++
 int i = 42;
 const int &r1 = i;      // we can bind a const int& to a plain int object
@@ -226,7 +226,7 @@ if (*curErr) {
 ### 2.4.3 Top-Level `const`
 從上一小節可知，一個pointer是否`const`與其可指向的物件是否為`const`是可以獨立討論的:我們使用**top-level const**來表示該指標*本身*為`const`，而用**low-level const**來表示該指標*可以指向*`const`*物件*。
 更廣義來說，top-level const指的是該物件本身為`const`，top-level const可以出現在任何一種物件型別中(ex.內建算數型別、class type或pointer type等)，而low-level const則出現在複合型別(e.g. pointer or reference)的base type，因此pointer可以同時擁有top-level const與low-level const(而且兩者互相獨立)。  
-e.g.
+>**Example**
 ``` c++
 int i = 0;
 int *const p1 = &i;  // we can't change the value of p1; const is top-level
