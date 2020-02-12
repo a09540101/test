@@ -62,7 +62,7 @@ vector<int> ivec;             // ivec holds objects of type int
 vector<Sales_item> Sales_vec; // holds Sales_items
 ```
 
-`Note`
+>`Note`  
 `vector`不是一種型別，而是模板，從`vector`產生的型別*一定要包含element的型別*。
 由於reference不是物件，因此沒有`vector` of reference，但我們可以有element本身為`vector`的`vector`:
 ``` c++
@@ -195,7 +195,7 @@ if (s.begin() != s.end()) { // make sure s is not empty
 
 #### Moving Iterators from One Element to Another
 Iterator使用increment operator(`++`)來移動至下一個元素。
-`Note`
+>`Note`  
 由於`end`回傳的iterator標示的並非元素，因此不能對它使用`++`或`*`。
 
 e.g.
