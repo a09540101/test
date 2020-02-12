@@ -7,7 +7,7 @@ using std::string
 ```
 
 ### 3.2.2 Operations on strings
->**Table 3.2 String Operations**  
+**Table 3.2 String Operations**  
 ![image](https://user-images.githubusercontent.com/55428505/66101454-7d0e4400-e5e1-11e9-9c33-b47d3f1dc919.png)
 #### Reading and Writing strings
 可用`iostream`函式庫來讀或寫`string`:
@@ -76,7 +76,7 @@ vector<vector<int>  >
 
 ### 3.3.1 Defining and Initializing vectors
 **Table 3.4: Ways to Initialize a vector**  
-![image](https://user-images.githubusercontent.com/55428505/66102606-7681cb80-e5e5-11e9-9137-3c5437734ea6.png)
+![image](https://user-images.githubusercontent.com/55428505/66102606-7681cb80-e5e5-11e9-9137-3c5437734ea6.png)  
 `vector`的默認初始化會產生一個空的`vector`:
 ``` c++
 vector<string> svec; // default initialization; svec has no elements
