@@ -111,14 +111,14 @@ vector<string> svec(10, "hi!"); // ten strings; each element is "hi!"
 vector<int> ivec(10);    // ten elements, each initialized to 0
 vector<string> svec(10); // ten elements, each an empty string
 ```
-這種形式的初始化有兩種限制:
+這種形式的初始化有兩種限制:  
 (1)	如果`vector`的element*無法*被默認初始化，則*必須提供initial element value*。  
 (2)	如果未提供初始值，必須使用direct form of initialization:  
 ``` c++
 vector<int> vi = 10;   // error: must use direct initialization to supply a size
 ```
 #### List Initializer or Element Count?
-初始化規則:
+初始化規則:  
 (1)	當我們使用`()`提供值，是在用這些值來*建構*(construct)物件(用來呼叫constructor，詳見第7章)。  
 (2)	當我們使用`{}`代表的是如果可能的話，我們會list initialize該物件，然而當沒辦法list initialize時，則裡面的值會用來建構該物件。  
 >**Example**  
@@ -176,10 +176,10 @@ auto b = v.begin(), e = v.end(); // b and e have the same type(其型別是什�
 
 #### Iterator Operations
 **Table 3.6: Standard Container Iterator Operations**
-![image](https://user-images.githubusercontent.com/55428505/66103451-65868980-e5e8-11e9-9b2a-39717d3db0d1.png)
-可以用`==`或`!=`來比較兩個iterator是否相同，當兩個iterator相等時，*必定*為下列兩種情況:
-(1)	它們標示同一個元素。
-(2)	他們都是off-the-end iterator
+![image](https://user-images.githubusercontent.com/55428505/66103451-65868980-e5e8-11e9-9b2a-39717d3db0d1.png)  
+可以用`==`或`!=`來比較兩個iterator是否相同，當兩個iterator相等時，*必定*為下列兩種情況:  
+(1)	它們標示同一個元素。  
+(2)	他們都是off-the-end iterator  
 就像pointer一樣我們透過`*`來獲得iterator標示的元素，對一個無效或off-the-end iterator使用dereference會導致為定義的結果。
 >**Example**  
 假設我們想把字串的第一個字元變成大寫，可以寫下面的程式:
@@ -207,7 +207,7 @@ for  (auto it = s.begin(); it != s.end() && !isspace(*it); ++it)
 ```
 上面的`!isspace`(`*it`)在遇到空白字元時代表一個word的結束，因此會跳出`for`。
 
-`KEY CONCEPT: GENERIC PROGRAMMING`
+>**KEY CONCEPT: GENERIC PROGRAMMING**  
 上面的例子裡面我們看到在`for` *loop裡面我們用的是*`!=`*而非*`<`，這是屬於C++的程式風格，原因是在標準函式庫的容器裡面大多的iterator都沒有`<`運算子，使用`!=`的話就不用擔心了。
 
 #### Iterator Types
