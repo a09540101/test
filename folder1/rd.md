@@ -260,7 +260,7 @@ auto it3 = v.cbegin();  // it3 has type vector<int>::const_iterator
 
 # 3.5 Arrays
 ### 3.5.1 Defining and Initializing Built-in Arrays
-array在宣告時，其大小必須是constant expression:
+array在宣告時，其大小必須是constant expression(見2.4.4):
 ``` c++
 unsigned cnt = 42;          // not a constant expression
 constexpr unsigned sz = 42; // constant expression
