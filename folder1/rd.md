@@ -76,7 +76,7 @@ int &r3 = i3, &r4 = i2;   // both r3 and r4 are references
 
 ## 2.4 `const` Qualifier
 當我們想將使某個變數的值不能被改變，則定義該變數為`const`。  
-e.g.
+>**Example**
 ``` c++
 cons tint bufSize = 512;
 ```
@@ -116,7 +116,7 @@ int main(){
 ```
 有時候我們想要在不同的檔案中共享同一個`const`變數，但是它的initializer不是一個常量expression，在這種情況下，如果我們不想要編譯器在不同的檔案裡分別產生不同的變數，而是能夠讓該`const`物件表現的跟其他nonconst變數一樣，只在一個檔案中定義`const`，而在多個檔案中使用它。
 想要解決這個問題(define a single instance of a `const` variable)，我們在該`const`變數的定義以及宣告都使用關鍵字`extern`。  
-e.g.
+>**Example**
 ``` c++
 // file_1.cc defines and initializes a const that is accessible to other files
 extern const int bufSize = fcn();
@@ -181,7 +181,7 @@ const int &ri = temp;    // bind ri to that temporary
 
 #### A Reference to `const` May Refer to an Object That Is Not `const`
 `const` reference綁定的物件不一定就是`const`的，它只代表我們*透過該reference*能做的事是受`const`限制的，而它被綁定的對象*未必*受到相同的限制。  
-e.g.
+>**Example**
 ``` c++
 int i = 42;
 int &r1 = i;          // r1 bound to i
@@ -362,7 +362,7 @@ decltype((i)) d;    // error: d is int& and must be initialized
 decltype(i) e;      // ok: e is an (uninitialized) int
 ```
 
-##2.6 Defining Our Own Data Structure
+## 2.6 Defining Our Own Data Structure
 ### 2.6.3 Writing Our Own Header Files
 在19.7中會提到可以在函數中定義class，然而這種class的功能有限，因此通常來說，在給定的source file中，我們不會在函數裡面定義class，當class定義於函數外面，他們在該source file中只能被定義一次。為了確保不同的檔案中使用定義相同的class，通常會把class定義於標頭檔(header files)中，例如`string`類別就是定義於`string`標頭檔之中。
 標頭檔中通常包含只能被定義一次的實體，例如class definitions、`const `與 `constexpr`變數。
