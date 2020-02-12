@@ -30,7 +30,6 @@ extern double pi = 3.1416; // definition
 
 ## 2.3 Compound Types
 廣義上來說，一個宣告的結構為**base type**加上一串**declarator**，每個declarator都為一個變數命名並且給予該變數與base type相關的型別。  
-
 e.g.
 ``` C++
 int &reval;
