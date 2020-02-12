@@ -31,3 +31,6 @@ cin >> s1 >> s2; // read first input into s1, second into s2
 cout << s1 << s2 << endl; // write both strings
 ```
 如果我們的輸入還是   *Hello World!*   ，則輸出會是”*HelloWorld!*”。
+
+>note
+ififjiwqajpjwpjp waiprjjpjpjpwjpajtpjtpwj則輸出會是*Hello*(沒有其他space)。就跟內建型別的輸入與輸出一樣，string operators回傳它左側的運算元作為結果，因此可以連續的讀或寫:
