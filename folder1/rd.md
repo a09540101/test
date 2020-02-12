@@ -35,7 +35,7 @@ cout << s1 << s2 << endl; // write both strings
 >note  
 ififjiwqajpjwpjp waiprjjpjpjpwjpajtpjtpwj則輸出會是*Hello*(沒有其他space)。就跟內建型別的輸入與輸出一樣，string operators回傳它左側的運算元作為結果，因此可以連續的讀或寫:
 
->`WARNING`
+>`WARNING`  
 >有些編譯器要求element為`vector`的`vector`在宣告時必須在`>`之間*加上空格*(較老式的宣告):
 ``` c++
 vector<vector<int>  >
