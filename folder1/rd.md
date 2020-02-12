@@ -11,7 +11,8 @@ using std::string
 ### 3.2.2 Operations on strings
 **Table 3.2 String Operations**  
 ![image](https://user-images.githubusercontent.com/55428505/66101454-7d0e4400-e5e1-11e9-9c33-b47d3f1dc919.png)
->#### Reading and Writing strings
+#### Reading and Writing strings
+
 可用`iostream`函式庫來讀或寫`string`:
 ``` c++
 // Note: #include and using declarations must be added to compile this code
