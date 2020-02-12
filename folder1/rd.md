@@ -3,9 +3,8 @@
 #### Default Initialization
 當我們在定義變數的時候沒有提供initializer，則它會被default initialized，default value取決於該變數的型別以及被定義的地方，內建型別物件的值取決於他被定義的地方:
 
-(1)  如果定義於所有函式之外，則會被初始化為0。
-(2)  如果定義於函數之內，則這些變數為**uninitialized**(例外:static變數，見6.1.1)，並且他們 
-的值為未定義的(undefined)，複製或access這種變數是錯誤的。
+(1)  如果定義於所有函式之外，則會被初始化為0。  
+(2)  如果定義於函數之內，則這些變數為**uninitialized**(例外:static變數，見6.1.1)，並且他們的值為未定義的(undefined)，複製或access這種變數是錯誤的。
 大部分的class可以默認初始化，例如如果我們不給string明確的initializer時，會獲得一個空字串，有些class不允許默認初始化，當我們沒在創建它的物件時提供initializer的話編譯器會complain。
 
 ### 2.2.2 Variable Declarations and Definitions
@@ -301,12 +300,12 @@ auto i = 0, *p = &i;      // ok: i is int and p is a pointer to int
 auto sz = 0, pi = 3.14;   // error: inconsistent types for sz and pi
 ```
 #### Compound Types, `const`, and `auto`
-編譯器從`auto`得出的型別未必和initializer的型別保持一致，有時候編譯器會做一些調整來達成一般的初始化規則。
+編譯器從`auto`得出的型別未必和initializer的型別保持一致，有時候編譯器會做一些調整來達成一般的初始化規則。  
 (1) 當我們使用reference當作initializer時，編譯器將會使用該reference所參考之物件的型別當成`auto`的type，*而非reference本身*:
 ``` c++
 int i = 0, &r = i;
 auto a = r;  // a is an int (r is an alias for i, which has type int)
-```
+```  
 (2) `auto`一般會忽略top-level const，但low-level const則會保存:
 ``` c++
 const int ci = i, &cr = ci;
