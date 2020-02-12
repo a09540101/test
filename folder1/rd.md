@@ -8,7 +8,7 @@
 大部分的class可以默認初始化，例如如果我們不給string明確的initializer時，會獲得一個空字串，有些class不允許默認初始化，當我們沒在創建它的物件時提供initializer的話編譯器會complain。
 
 ### 2.2.2 Variable Declarations and Definitions
-為了支援separate compilation，C++將聲明(declaration)與定義(definition)做了區別:
+為了支援separate compilation，C++將聲明(declaration)與定義(definition)做了區別:  
 (1)	**聲明(declaration)**  
 使得一個名稱(name)被程式所知道(makes a name known to the program)。  
 (2)	**定義(definition)**  
