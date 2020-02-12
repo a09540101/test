@@ -9,10 +9,10 @@
 
 ### 2.2.2 Variable Declarations and Definitions
 為了支援separate compilation，C++將聲明(declaration)與定義(definition)做了區別:
-(1)	**聲明(declaration)**
-使得一個名稱(name)被程式所知道(makes a name known to the program)。
-(2)	**定義(definition)**
-創建該名稱的實體(creates the associated entity)。
+(1)	**聲明(declaration)**  
+使得一個名稱(name)被程式所知道(makes a name known to the program)。  
+(2)	**定義(definition)**  
+創建該名稱的實體(creates the associated entity)。  
 一個變數的聲明標示了該變數的(1)型別(2)名稱，而一個變數的定義就是一種聲明，除了標示型別及名稱外，定義還在記憶體中配置了空間(allocates storage)且可能為該變數提供了初始值。
 如果要獲得一個不是定義的聲明，我們加入關鍵字extern並且不提供一個explicit initializer:
 ``` C++
@@ -24,7 +24,7 @@ int j;          // declares and defines j
 extern double pi = 3.1416; // definition
 ```
 
-上面的語法可行，但是這麼做就蓋掉extern的作用了。但是在函數中這麼做會發生錯誤。
+上面的語法可行，但是這麼做就蓋掉extern的作用了。但是在函數中這麼做會發生錯誤。  
 注意:變數*只能被定義一次*，但是可以被聲明很多次!
 
 ## 2.3 Compound Types
@@ -122,7 +122,7 @@ extern const int bufSize = fcn();
 // file_1.h
 extern const int bufSize; // same bufSize as defined in file_1.cc
 ```
-在此例中，file_1.cc定義且初始化了`bufSize`，但`bufSize`是`const`，為了讓其他檔案能夠使用它，我們使用`extern`。在/file_1.h對`bufSize`的宣告仍用了`extern`，這表示(signify)` bufSize`並非該檔案特有的(not local to the file)而且其定義會在其他檔案中出現。  
+在此例中，file_1.cc定義且初始化了`bufSize`，但`bufSize`是`const`，為了讓其他檔案能夠使用它，我們使用`extern`。在/file_1.h對`bufSize`的宣告仍用了`extern`，這表示(signify)`bufSize`並非該檔案特有的(not local to the file)而且其定義會在其他檔案中出現。  
 >**Example**
 ``` c++
 //a.h的程式碼如下
@@ -176,7 +176,7 @@ const int &ri = dval;
 const int temp = dval;   // create a temporary const int from the double
 const int &ri = temp;    // bind ri to that temporary
 ```
-我們看到了`ri`其實是被綁定到一個**temporary** 物件，這是由編譯器在需要一個空間儲存expression運算後的結果時所創建的一個*未命名*的物件(通常在C++中被簡稱為temporary)，所以說，`ri`並非綁定於`dval`中，而是一個`const`的temporary，因此如果`ri`不是一個`const `reference，會被編譯器視作違法的。
+我們看到了`ri`其實是被綁定到一個**temporary** 物件，這是由編譯器在需要一個空間儲存expression運算後的結果時所創建的一個*未命名*的物件(通常在C++中被簡稱為temporary)，所以說，`ri`並非綁定於`dval`中，而是一個`const`的temporary，因此如果`ri`不是一個`const`reference，會被編譯器視作違法的。
 
 #### A Reference to `const` May Refer to an Object That Is Not `const`
 `const` reference綁定的物件不一定就是`const`的，它只代表我們*透過該reference*能做的事是受`const`限制的，而它被綁定的對象*未必*受到相同的限制。  
@@ -293,7 +293,8 @@ constexpr int *p1 = &j;      // p1 is a constant pointer to the int j
 // the type of item is deduced from the type of the result of adding val1 and val2
 auto item = val1 + val2; // item initialized to the result of val1 + val2
 ```  
-e.g.如果`val1`與`val2`的型別`double`，則`item`的型別就是`double`。
+>**Example**  
+如果`val1`與`val2`的型別`double`，則`item`的型別就是`double`。
 如同其他type specifier，可以在`auto`中定義多個變數以及複合型別，但要注意initializer的型別*必須保持一致*:
 ``` c++
 auto i = 0, *p = &i;      // ok: i is int and p is a pointer to int
