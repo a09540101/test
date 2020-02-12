@@ -14,7 +14,7 @@ using std::string
 #### Reading and Writing strings
 
 >可用`iostream`函式庫來讀或寫`string`:
->``` c++
+``` c++
 // Note: #include and using declarations must be added to compile this code
 int main()
 {
